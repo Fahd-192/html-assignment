@@ -1,0 +1,102 @@
+/* Global layout and colour palette */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background-color: #aad4cf;
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.container {
+  max-width: 840px;
+  margin: 0 auto;
+  background-color: #d4e9e7;
+}
+
+/* Header image is an <img>, with positioned text on top */
+.site-header { position: relative; height: 280px; overflow: hidden; }
+.site-header img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.site-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  font-size: 52px;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Three-column navigation */
+nav ul { display: flex; list-style: none; margin: 0; padding: 0; }
+nav li { width: 33.333%; text-align: center; margin: 0; }
+nav li + li { border-left: 1px solid #888; }
+nav a {
+  display: block;
+  padding: 9px 0;
+  color: #000;
+  font-size: 22px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+nav a:hover, nav a:focus { background-color: #b7d8d4; }
+
+/* Main article and floated image */
+main { padding: 10px 8px 0; }
+h2 { font-size: 25px; font-weight: normal; margin: 16px 0 12px; }
+article::after { content: ""; display: block; clear: both; }
+.article-image { float: left; width: 205px; height: 210px; object-fit: cover; margin: 0 16px 8px 0; }
+article p { margin: 0; line-height: 1.29; }
+
+/* Facts list */
+.facts h2 { margin-top: 24px; margin-bottom: 8px; }
+.facts ul { margin: 0; padding-left: 13px; }
+.facts li { line-height: 1.05; }
+
+/* Contact form */
+#contact h2 { margin-top: 22px; margin-bottom: 9px; }
+form { border: 1px solid #333; padding: 26px 13px 13px; }
+.form-field { margin-bottom: 16px; }
+.form-field label { display: block; margin-bottom: 6px; font-size: 15px; }
+.form-field input, .form-field textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  background: #fff;
+  font: inherit;
+}
+.form-field input { height: 25px; }
+.form-field textarea { height: 82px; border-color: #999; resize: vertical; }
+fieldset { border: 0; padding: 0; margin: 0 0 12px; }
+legend { padding: 0; margin-bottom: 20px; font-size: 18px; }
+.radio-options { display: flex; align-items: center; gap: 5px; }
+.radio-options label { font-size: 14px; }
+.radio-options input { margin: 0 2px 0 0; }
+button {
+  padding: 8px 10px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #000;
+  font-size: 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+button:hover, button:focus { background: #aad4cf; }
+
+/* Footer */
+footer { padding: 26px 26px 28px; text-align: right; }
+footer p { margin: 0; }
+
+/* Keep the layout usable on small screens */
+@media screen and (max-width: 600px) {
+  .site-header { height: 220px; }
+  .site-header h1 { font-size: 38px; }
+  nav a { font-size: 17px; }
+  .article-image { width: 40%; height: auto; }
+  h2 { font-size: 23px; }
+}
